@@ -51,25 +51,13 @@
   </nav>
 <div class="container-fluid px-0 b-0 content" id="content-section">
   
-<section class="text-center align-center fullsize" id="about" style="background: url(/static/main.jpg) no-repeat center; background-size: cover;"> <!--  -->
-  <div class="container-fluid container-lg pb-5">
-        <p class="">
-          <h1 class="display-3 font-weight-bold text-right text-white" >Andrew Ritter</h1>
-          <!-- <br> -->
-          <p class="display-4 lead text-right text-white">
-               Web Resume
-          </p> 
-        </p>
-  </div>
-</section>
-
-<section class="text-center halfsize content">
-  <div class="container-fluid container-lg" id="projects">
-    <h1 class="display-4 background2 font-weight-bold title-text">Projects</h1>
+<section class="content-light">
+  <div class="container pt-2 text-center">
+    <h1 class="display-3 font-weight-bold">Projects</h1>
     <hr>
-    <div class="row flex-row flex-nowrap sidescroll" id="sidescroll">
+    <div class="row">
       
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6 col-md-4 pb-4">
         <a href="/projects/inventoryassistant/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
@@ -85,7 +73,7 @@
         </a>
       </div>
       
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6 col-md-4 pb-4">
         <a href="/projects/website/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
@@ -101,7 +89,7 @@
         </a>
       </div>
       
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6 col-md-4 pb-4">
         <a href="/projects/homelab/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
@@ -118,66 +106,8 @@
       </div>
       
     </div>
-    <div class="container d-md-none"> <!-- remove d-md-none once there are more than 3 project posts -->
-      <br>
-      <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('left','#sidescroll')">&lt;</button>
-      <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('right','#sidescroll')">&gt;</button>
-    </div>
   </div>
 </section>
-
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="experience">
-    <p>
-      <h1 class="display-4 font-weight-bold text-center">Experience</h1>
-      <hr>
-      <div class="container">
-        <h5>Bruckner Truck Sales</h5>
-<h6>System Administrator</h6>
-<p>2020 - Present</p>
-<ul>
-<li>Assisted with day-to-day helpdesk duties</li>
-<li>Built a Python application for assisting with inventory management (check it out above!)</li>
-<li>Implemented a company-wide multi-factor authentication project</li>
-<li>Adjusted Microsoft license usage to reduce costs</li>
-</ul>
-<p><br></p>
-<h5>cat-man-du</h5>
-<h6>Computer Technician</h6>
-<p>2013 - 2015</p>
-<ul>
-<li>Worked with the customer to determine their computer issues</li>
-<li>Replaced faulty components after troubleshooting hardware problems</li>
-<li>Removed viruses/malware from infected computers</li>
-<li>Performed data recovery on failing hard drives when possible</li>
-</ul>
-<p><br></p>
-<!-- #### For other roles, check out my Linkedin!
-
-<a href="https://www.linkedin.com/in/aeritter">https://www.linkedin.com/in/aeritter</a> -->
-    </p>
-  </div>
-</section>
-
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="education">
-    <p>
-      <h1 class="display-4 font-weight-bold text-center">Education</h1>
-      <hr>
-      <div class="container">
-        <h5>BS - Technology Management</h5>
-<h6>Texas A&amp;M University</h6>
-<p>Class of 2020<br />
-Minors in Business and Cybersecurity<br />
-<br></p>
-<h5>A+ Certified</h5>
-<p>2015<br />
-<br></p>
-      </div>
-    </p>
-  </div>
-</section>
-
 
 
 
@@ -247,18 +177,6 @@ Minors in Business and Cybersecurity<br />
 
 
 
-
-<script>
-  function scrollToSide(side, elmnt) {
-    var el = $(elmnt);
-    var scrollAmount = $(elmnt+" div")[0].clientWidth;
-    el.css('scroll-snap-type', 'none'); 
-    el.animate({scrollLeft: side==='left' ? '-='+scrollAmount : '+='+scrollAmount}, 300);
-    el.promise().done(function(){
-      el.css('scroll-snap-type', 'x mandatory'); 
-    });
-  };
-</script>
 
 <!-- <script>
   $('#content-section').css('padding-top', $('.navbar').outerHeight() + 'px')

@@ -1,0 +1,267 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Andrew Ritter</title>
+  <!-- Thanks, favicon.io! -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicons/site.webmanifest">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  
+      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?008f230e">
+  
+  
+  <script> //added to prevent flickering
+    const currentTheme = localStorage.getItem('theme');
+    if ((! currentTheme && window.matchMedia("(prefers-color-scheme: dark)") || (currentTheme === 'dark'))) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar-expand-md navbar-custom align-center" id="navbar">
+    <div class="navbar container-lg navbar-custom py-0 px-3">
+      <a class="navbar-brand" href="https://aeritter.com">
+        <h1 class="text-center">Andrew Ritter</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav font-weight-bold ml-auto">
+          <li class="nav-item"><a class="nav-link pl-3" href="/#">Home</a></li>
+          <li class="nav-item"><a class="nav-link pl-3" href="/#projects">Projects</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/#experience">Experience</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/#education">Education</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/contact/">Contact</a></li> 
+          <li class="nav-item d-block d-md-none pl-3">
+            <hr>
+            <div class="custom-control custom-switch theme-switch pb-3">
+              <input type="checkbox" class="custom-control-input" id="theme-switch-toggle">
+              <label class="custom-control-label" for="theme-switch-toggle"><p class="nav-text m-0 p-0">Dark Theme</p></label>
+            </div>
+          </li>
+          <!-- <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>  -->
+            
+            <!-- <a class="nav-link nav-item" href="https://www.github.com/aeritter/">GitHub</a>
+            <a class="nav-link nav-item" href="https://www.linkedin.com/in/aeritter/">Linkedin</a> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid px-0 b-0 content" id="content-section">
+  
+<section>
+  <div class="container-fluid justify-content-center"  style="background-color: #a8978e;" >
+    
+    
+    <div class="container mx-auto text-center">
+      <!-- <object type="image/svg+xml" data="/static/IA%20conveyor.svg" class="mw-100"></object> -->
+        <img src="/static/IA%20conveyor.svg" class="img-fluid mx-auto d-block" style="max-height: 35vh;">
+
+    </div>
+    
+  </div>
+  <div class="container-fluid container-md content">
+    <!-- <p class="title text-center display-3"><strong>Inventory Assistant</strong></p> -->
+    <!-- <br> -->
+    <div class="row">
+      <div class="col-12 col-lg-3 d-none d-flex mkdn-nav">
+        <div class="container-fluid p-0">
+          <div class="sticky-top" id="toc">
+            <div class="container-fluid pt-3"></div>
+            <div class="container-fluid content py-3 border border-white rounded">
+
+              <h4 class="text-center"><a href="#">Table of Contents</a></h4>
+              <hr>
+              <div class="toc">
+<ul>
+<li><a href="#inventory-assistant">Inventory Assistant</a></li>
+<li><a href="#technical-information">Technical Information</a><ul>
+<li><a href="#design">Design</a><ul>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#inputs">Inputs</a></li>
+<li><a href="#datastore">Datastore</a></li>
+<li><a href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li><a href="#current-modules">Current Modules</a><ul>
+<li><a href="#pdf-processing-module">PDF processing module</a></li>
+<li><a href="#airtable-functions">Airtable functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#github">Github!</a></li>
+</ul>
+</div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9 px-0">
+        <div class="container-fluid mkdn pt-3" style="padding-bottom: 10rem;">
+          <h1 id="inventory-assistant">Inventory Assistant</h1>
+<hr />
+<p>Early on in my new job at a truck sales company, I was given a unique problem to solve. When we ordered a new truck, we would get a PDF that contained all of that truck's specifications. No CSV, Excel file, or API we could access -- just a PDF for each truck that had been ordered from the manufacturer. And we needed to automate the process of getting those specs added to the item in inventory.</p>
+<p>If we continued as-is, it could take far more time than reasonable to manually add those specs where needed. The PDF is available for internal use, but we are left with the problem of making those specs available to people outside of the organization through the website.</p>
+<p>Enter the <strong>Inventory Assistant</strong>, a service written in Python and designed to:</p>
+<ul>
+<li>Take in data from various sources</li>
+<li>Reconcile input data with existing data</li>
+<li>Export new data to all output sources</li>
+</ul>
+<p>It currently contains a module for obtaining data from PDFs and functionality for interfacing with Airtable.</p>
+<p>This was my first Python program with a scope large enough to result in multiple iterations/rewrites and 700+ lines of code. Everything I had done previously consisted of small scripts for basic processing. This program has come a long way and helped me learn quite a bit about OOP, threading/multiprocessing, queues, events, RegEx, JSON, APIs, and program design. It currently accomplishes what it needs to, but there's plenty of room for expansion and improvement.<br />
+<br><br></p>
+<h1 id="technical-information">Technical Information</h1>
+<hr />
+<p>The information below is an overview of the program design. For details on program usage, view the README on GitHub!<br />
+<br></p>
+<h2 id="design">Design</h2>
+<p>The program is currently designed to be <em>modular</em> with a 3 part dataflow:</p>
+<ol>
+<li>Input functions/modules</li>
+<li>An internal datastore for inventory reconciliation</li>
+<li>Output functions/modules</li>
+</ol>
+<p>Input modules:</p>
+<ul>
+<li>PDF processor</li>
+<li>Airtable (currently initialization only)</li>
+</ul>
+<p>Output modules:</p>
+<ul>
+<li>Airtable</li>
+<li>SQL database (not yet implemented)</li>
+</ul>
+<p>Everything is event-based where possible. A web interface is in the works for displaying objects currently in inventory and the error log. A webpage for adjusting PDF processing settings is planned but not in progress.</p>
+<h3 id="modules">Modules</h3>
+<p>The project started small. I had only been presented with one type of document that needed to be parsed; as far as I knew, that was the only one we dealt with. But the number of document types grew. And then we had other sources of data that needed to be added.</p>
+<p>As the codebase grew, it quickly became hard to read and even harder to wrap your head around -- especially when coming back to the project after a few days away. To resolve this, the program was restructured with the idea that the main program would only handle taking in information, reconciling it with existing information, and sending the result out to update external sources.</p>
+<p>Standardizing the input and output allowed me to separate the functions that deal with the various data sources out into their own files, making them far easier to manage and update. New sources could be easily added without concern for breaking other parts of the program.</p>
+<h3 id="inputs">Inputs</h3>
+<p>The idea is to make it easy to create new modules as input/output sources that are imported into the main program. The main program will provide those sources with two queues -- one for Inventory Objects, one for errors. </p>
+<p>The inventory queue accepts inventory objects, which are instances of an inventoryObject class. In the same step, the queue is passed the name/source of the new information so it can ignore that source as an output; you do not want new input data from a source to go back out to the same source, as that may update an attribute which could cause it to loop.</p>
+<p>The error queue is to ensure all functions output errors to the same locations and in the same format.</p>
+<h3 id="datastore">Datastore</h3>
+<p>This currently exists as an object that stores inventory objects in a dictionary and contains a method to compare inventory objects and update that dictionary. Once that method has finished, it will add all relevant information to the Output queue.</p>
+<p>Once a new inventory object makes it to the datastore, it will be checked against the contents. If another object exists with the same name, the contents of the new object will update the contents of the old. If no other object in the datastore has the same name, the new object will be added to the datastore.</p>
+<p>Once all changes have been made, the object and its associated input source are passed to the output queue.</p>
+<h3 id="outputs">Outputs</h3>
+<p>Any inventory object received by the Outputs class is passed on to all output modules that do not share the same source name as the inventory object. Processing of the object is handled by each individual module. The Error queue from the Inputs class is passed to each module on module instantiation.<br />
+<br></p>
+<h2 id="current-modules">Current Modules</h2>
+<p>The program currently contains one module -- a module for processing PDF files.</p>
+<p>There are some functions for Airtable within the main script that need to be separated out into modules, but they are currently too tightly bound to other parts of the code (mainly each other). </p>
+<h3 id="pdf-processing-module">PDF processing module</h3>
+<p>When this module is instantiated, it will monitor a given folder for new PDF files. When a PDF is found, it will pull the text out by using pdftotext.exe (a command-line utility from xpdfreader.com). The document is split as needed; sometimes a PDF will contain multiple separate invoices.</p>
+<p>Once the document has been split and all the parts have been written to disk as individual PDF files, an inventory object is created for each new document. The individual inventory objects contain the text from each of the document's pages, as well as the information pulled from that text with RegEx. After this has been completed, the inventory object is sent to the Input queue to update the datastore.</p>
+<h3 id="airtable-functions">Airtable functions</h3>
+<p>There are 3 separate functions that currently exist.</p>
+<ol>
+<li>On program startup/initialization, get all inventory entries on Airtable and create a new inventory object for each one, then send them to the datastore.</li>
+<li>When a new inventory object passes through the datastore, all relevant information is uploaded to Airtable to either update an existing entry to create a new entry. </li>
+<li>If a new entry is created by #2, we receive a record ID which needs to be added to the inventory object in the datastore. This means we have both an Output AND an Input tied together.</li>
+</ol>
+<p>These three functions are tightly integrated with other functions/modules making it a challenge to separate them out into their own modules.</p>
+<h5>Challenges</h5>
+<p>#1 is tied to the RegEx processing settings found in the PDF processing module. Uploading data to an Airtable column that cannot be changed will return an error and no updates will be made, so the program needs to ensure that it only pulls data from columns in Airtable whose content can be changed.<br />
+#2 &amp; #3 are tied together. The filesystem layout for modules did not take this possibility into account, so some minor changes will need to be made.</p>
+<p><br><br></p>
+<h1 id="github">Github!</h1>
+<hr />
+<p><a href="https://github.com/aeritter/inventory-assistant">Inventory Assistant - Github</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  <footer class="footer">
+    <div class="container-fluid m-0 p-5">
+      <div class="container align-middle">
+        <div class="float-left text-light">
+          © 2020 Andrew Ritter<br>
+          Made with Python, Flask, and Bootstrap.
+        </div>
+        <div class="float-right d-none d-md-block">
+          <div class="custom-control custom-switch theme-switch pb-3">
+            <input type="checkbox" class="custom-control-input" id="theme-switch-toggle2">
+            <label class="custom-control-label" for="theme-switch-toggle2"><p class="text-white m-0 p-0">Dark Theme</p></label>
+          </div>
+        </div>
+        <!-- <div class="float-right">
+          <ul class="list-unstyled ">
+            <li><a href="https://www.github.com/aeritter/"><u>GitHub</u></a></li>
+            <li><a href="https://www.linkedin.com/in/aeritter/"><u>Linkedin</u></a></li>
+          </ul>        
+        </div> -->
+      </div>
+    </div>
+  
+  </footer>
+  
+
+</div>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script>
+  //toggle theme
+  const toggleSwitches = document.querySelectorAll('.theme-switch input[type="checkbox"]');
+  //check for stored theme
+  if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+  
+      if (currentTheme === 'dark') {
+          toggleSwitches.forEach(function(sw) { sw.checked = true; });
+      }
+  } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleSwitches.forEach(function(sw) { sw.checked = true; });
+  }
+  function switchTheme(e) {
+    toggleSwitches.forEach(function(sw) { sw.checked = e.target.checked; });
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    } 
+  }
+  toggleSwitches.forEach(function(sw) { sw.addEventListener('change', switchTheme, false); });
+
+</script> <!-- thanks: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8 -->
+
+
+
+
+<!-- <script>
+  $('#content-section').css('padding-top', $('.navbar').outerHeight() + 'px')
+  
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+    document.getElementById("toc").style.paddingTop = "81px";
+  } else {
+    document.getElementById("navbar").style.top = "-66px";
+    document.getElementById("toc").style.paddingTop = "15px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script> -->
+</body>

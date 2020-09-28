@@ -1,0 +1,300 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Andrew Ritter</title>
+  <!-- Thanks, favicon.io! -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicons/site.webmanifest">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  
+      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?008f230e">
+  
+  
+  <script> //added to prevent flickering
+    const currentTheme = localStorage.getItem('theme');
+    if ((! currentTheme && window.matchMedia("(prefers-color-scheme: dark)") || (currentTheme === 'dark'))) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar-expand-md navbar-custom align-center" id="navbar">
+    <div class="navbar container-lg navbar-custom py-0 px-3">
+      <a class="navbar-brand" href="https://aeritter.com">
+        <h1 class="text-center">Andrew Ritter</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav font-weight-bold ml-auto">
+          <li class="nav-item"><a class="nav-link pl-3" href="/#">Home</a></li>
+          <li class="nav-item"><a class="nav-link pl-3" href="/#projects">Projects</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/#experience">Experience</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/#education">Education</a></li> 
+          <li class="nav-item"><a class="nav-link pl-3" href="/contact/">Contact</a></li> 
+          <li class="nav-item d-block d-md-none pl-3">
+            <hr>
+            <div class="custom-control custom-switch theme-switch pb-3">
+              <input type="checkbox" class="custom-control-input" id="theme-switch-toggle">
+              <label class="custom-control-label" for="theme-switch-toggle"><p class="nav-text m-0 p-0">Dark Theme</p></label>
+            </div>
+          </li>
+          <!-- <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>  -->
+            
+            <!-- <a class="nav-link nav-item" href="https://www.github.com/aeritter/">GitHub</a>
+            <a class="nav-link nav-item" href="https://www.linkedin.com/in/aeritter/">Linkedin</a> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid px-0 b-0 content" id="content-section">
+  
+<section>
+  <div class="container-fluid justify-content-center"  style="background-color: #A5B1A5;" >
+    
+    
+    <div class="container mx-auto text-center">
+      <!-- <object type="image/svg+xml" data="/static/servers%20thumb.svg" class="mw-100"></object> -->
+        <img src="/static/servers%20thumb.svg" class="img-fluid mx-auto d-block" style="max-height: 35vh;">
+
+    </div>
+    
+  </div>
+  <div class="container-fluid container-md content">
+    <!-- <p class="title text-center display-3"><strong>Homelab</strong></p> -->
+    <!-- <br> -->
+    <div class="row">
+      <div class="col-12 col-lg-3 d-none d-flex mkdn-nav">
+        <div class="container-fluid p-0">
+          <div class="sticky-top" id="toc">
+            <div class="container-fluid pt-3"></div>
+            <div class="container-fluid content py-3 border border-white rounded">
+
+              <h4 class="text-center"><a href="#">Table of Contents</a></h4>
+              <hr>
+              <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#networkhardware">Network/Hardware</a><ul>
+<li><a href="#pfsense">pfSense</a></li>
+<li><a href="#switch">Switch</a></li>
+<li><a href="#access-point">Access Point</a></li>
+<li><a href="#servers">Servers</a></li>
+</ul>
+</li>
+<li><a href="#configuration">Configuration</a><ul>
+<li><a href="#pfsense_1">pfSense</a></li>
+<li><a href="#server-1">Server #1</a><ul>
+<li><a href="#windows-server-2016">Windows Server 2016</a></li>
+<li><a href="#freenas">FreeNAS</a></li>
+<li><a href="#zabbix">Zabbix</a></li>
+<li><a href="#grafana">Grafana</a></li>
+<li><a href="#other">Other</a></li>
+</ul>
+</li>
+<li><a href="#server-2">Server #2</a></li>
+</ul>
+</li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9 px-0">
+        <div class="container-fluid mkdn pt-3" style="padding-bottom: 10rem;">
+          <h1 id="introduction">Introduction</h1>
+<hr />
+<p>I first picked up an interest in computers back in middle school and in the same way that most others probably do -- through video games. There was one in particular that really ignited my interest. It allowed for custom LUA scripts in-game and I happened to meet some people who were writing their own scripts and would freely give out programming tips. It may not have been much or very involved, but it was enough to teach me some of the foundations of logical thinking in programming. Best of all, struggling through a script and seeing actual progress as well as the end result was exhilarating.</p>
+<p>But my time with the game wasn't perfect. In many games, I had performance issues.</p>
+<p>It would run slow at times. </p>
+<p>It would freeze.</p>
+<p>Crash. </p>
+<p>Sometimes even crash the computer.</p>
+<p>That is, until I learned that driver updates were a thing.</p>
+<p>It's a very simple problem but your average middle school kid wouldn't know how to fix it, much less where to start looking. Especially if there were no one nearby with any knowledge of the topic.</p>
+<p>It took a while, but I finally figured it out.</p>
+<p>Updating the drivers fixed all of those problems. The game ran faster. Smoother. It was stable and so was the computer. Amazing how much can change in 2 years worth of driver updates.</p>
+<p>I then understood what a difference your drivers can make. So if the latest drivers can make that much of a difference in the hardware you run, what kind of difference would you see in changing the hardware itself?</p>
+<p>With a middle-schooler's budget, I got some help ordering a $35 graphics card on eBay. It was quite the upgrade at the time, going from an ATI X600 to an ATI 2600 XT. The difference in games was huge. But now the processor was the bottleneck. The Pentium D 820 (2.8GHz) wasn't quite cutting it anymore. A few how-to videos later and a bit of research led to me upgrading to a Pentium D 945 (3.4GHz). Again, middle-schooler's budget. Newer processors had come out and this was going for far less than retail on eBay.</p>
+<p>And then I put together my own PC. And another a few years later. And another a few years after that. Occasionally one for a friend; sometimes one for an acquaintance.</p>
+<p>Eventually, I came across the <a href="https://www.reddit.com/r/homelab/wiki/introduction">Homelab subreddit</a> which kickstarted my journey into completely <s>un</s>necessary business hardware for <s>messing around</s> learning business IT.</p>
+<p><br></p>
+<h1 id="networkhardware">Network/Hardware</h1>
+<hr />
+<h3 id="pfsense">pfSense</h3>
+<p>I decided I wanted something more capable than your typical consumer router and <a href="https://www.pfsense.org/">pfSense</a> was highly regarded in the Homelab community. I gave it a shot and not only was it full of features -- the stability was rock-solid. I initially had this set up in a virtual machine for testing but quickly found that it's not very useful there when you need to take down the host machine and can't search the internet to fix the problem.</p>
+<p>So it ended up on a mini-PC with a laptop processor. Low power consumption and separate from the rest of the network.</p>
+<h3 id="switch">Switch</h3>
+<p>The router was connected directly to the switch on one of its 1Gb ethernet ports. The switch also has a couple of 10Gb SFP+ ports that were mainly used for quick transfers between my main PC and the file server.</p>
+<p>A couple of VLANs were set up to separate the wireless network from hardwired devices.</p>
+<h3 id="access-point">Access Point</h3>
+<p>Connected to the switch on one of the VLAN enabled ports. No special set up here. In my experience, the wireless routers made by Asus are very stable and I haven't had an issue with either of 2 different models that I have used.</p>
+<h3 id="servers">Servers</h3>
+<h5>Server 1:</h5>
+<ul>
+<li>Dual Xeon E5-2670</li>
+<li>128GB RAM</li>
+<li>1.5TB PCIe SSD</li>
+<li>1x 512GB SSD</li>
+<li>4x 8GB WD Red HDDs</li>
+<li>10Gb SFP+ network card</li>
+<li>VMware ESXi hypervisor</li>
+</ul>
+<p>The main server was beyond overkill for my requirements. Uses much more electricity than I'm happy with. I should've gone with something smaller.</p>
+<p>It's connected in two places to the switch: one ethernet port and one 10Gb SFP+ port. The ethernet is on a separate VLAN which is set up so only a certain IP can access it. It's used for IPMI and for accessing the ESXi menus. The SFP+ card handles external traffic for all of the virtual machines.</p>
+<p>VMs are hosted on the PCIe SSD and backed up to the SATA SSD. VM backups are also copied to the file server just in case.</p>
+<p>The controller for the hard drives is passed through to the file server VM. The hard drives are in a RAIDz2 configuration to get a combination of speed (300MB/s) and reliability. </p>
+<h5>Server 2:</h5>
+<h6>Dell R210ii</h6>
+<ul>
+<li>Xeon E3-1240</li>
+<li>16GB RAM</li>
+<li>2x 256GB SSDs</li>
+<li>IDRAC module installed</li>
+</ul>
+<p>This one was used mainly as backup for the main server.</p>
+<p><br></p>
+<h1 id="configuration">Configuration</h1>
+<hr />
+<p><br></p>
+<h2 id="pfsense_1">pfSense</h2>
+<p>There are all sorts of enterprise-level features available on this platform. I may not have made much use of many of them but I definitely got everything I wanted out of it, specifically:</p>
+<ul>
+<li>VLANs</li>
+<li>DHCP server</li>
+<li>DNS server (and caching)</li>
+<li>DDNS and LetsEncrypt SSL handling</li>
+<li>pfBlockerNG (adblock across network)</li>
+<li>fq_codel QOS</li>
+<li>OpenVPN for mobile connections</li>
+<li>IPsec for connecting to pfSense at another location</li>
+<li>Suricata IDS/IPS</li>
+</ul>
+<p>This handled my internet speeds of 400Mbps down and 40Mbps up with ease and QOS made it even better. I could download at nearly the full speed of my connection and not run into latency issues for games or other latency-sensitive applications.</p>
+<p><br></p>
+<h2 id="server-1">Server #1</h2>
+<p>With ESXi as the hypervisor, everything ran smoothly.</p>
+<p>For a while, consumer Nvidia GPUs could be passed through to a VM and they would work fine. I know that stopped being the case for a while. I'm not sure if anything has changed.</p>
+<h3 id="windows-server-2016">Windows Server 2016</h3>
+<p>This had Active Directory Domain Services enabled and hosted my domain. My other VMs were tied to this where possible so I could use the one login for everything.</p>
+<p>No major setup was done here as I had no real use for much of it. I ended up learning much of what I know about Windows Server from one of the jobs I've had.</p>
+<h3 id="freenas">FreeNAS</h3>
+<p>This is the file server OS I used. It has the 10Gb card and the SATA controller for the hard drives passed through to it. </p>
+<p>The hard drives are set up in RAIDz2, which is similar to RAID 10 but is software-based, has extra protection for data, and can handle <strong>ANY</strong> two disks failing. Because ZFS is software-based, I can wipe out the OS and start new and load up those disks in their configuration as if nothing had happened.</p>
+<p>Permissions were set so I had a public folder and a private folder. The VM was AD-joined so I could set extra permissions as I needed and I could log in using my AD credentials.</p>
+<h3 id="zabbix">Zabbix</h3>
+<p>I lost this VM a few months after setting it up due to allocating too little space to it. It quickly filled up and I didn't have the knowledge at the time to expand the disk properly.</p>
+<p>While it was working, it received data from my VMs, the server itself, and pfSense.</p>
+<p>I probably should have set up a separate VM for log intake.</p>
+<h3 id="grafana">Grafana</h3>
+<p>This was connected to Zabbix to more clearly show the data that was being received. I hope to get this set up again at some point in the future.</p>
+<h3 id="other">Other</h3>
+<p>I spun up a few Windows 10 VMs and Ubuntu/CentOS VMs to test out various things over time.</p>
+<p>Manually setting up each one became a bit of a hassle so I began to look into Ansible and the like. I made a bit of progress before I was stopped by the ESXi free license's limitation of the ESXi API. I got a better license later on but never came back around to get this set up.</p>
+<h2 id="server-2">Server #2</h2>
+<p>The SSDs in this server were placed in a RAID 1 configuration.</p>
+<p>It ran ESXi as the hypervisor and Windows Server 2016 as the only VM.</p>
+<p>The 2nd copy of Server 2016 was used as a backup domain controller to the Server 2016 VM on the main server.</p>
+<p>VMs could be transferred here with a paid VMware ESXi license with VMotion.</p>
+<p><br></p>
+<h1 id="summary">Summary</h1>
+<hr />
+<p>Various hardware and software was used to build my own business-like IT environment in a project that took place over many years and has served many purposes. For years to come, it will continue to serve as a test platform for learning the newest technologies and becoming more familiar with the capabilities of such an environment.</p>
+<p>The experience gained here has been very valuable to me so far in my professional career and I don't see this ending any time soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  <footer class="footer">
+    <div class="container-fluid m-0 p-5">
+      <div class="container align-middle">
+        <div class="float-left text-light">
+          © 2020 Andrew Ritter<br>
+          Made with Python, Flask, and Bootstrap.
+        </div>
+        <div class="float-right d-none d-md-block">
+          <div class="custom-control custom-switch theme-switch pb-3">
+            <input type="checkbox" class="custom-control-input" id="theme-switch-toggle2">
+            <label class="custom-control-label" for="theme-switch-toggle2"><p class="text-white m-0 p-0">Dark Theme</p></label>
+          </div>
+        </div>
+        <!-- <div class="float-right">
+          <ul class="list-unstyled ">
+            <li><a href="https://www.github.com/aeritter/"><u>GitHub</u></a></li>
+            <li><a href="https://www.linkedin.com/in/aeritter/"><u>Linkedin</u></a></li>
+          </ul>        
+        </div> -->
+      </div>
+    </div>
+  
+  </footer>
+  
+
+</div>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script>
+  //toggle theme
+  const toggleSwitches = document.querySelectorAll('.theme-switch input[type="checkbox"]');
+  //check for stored theme
+  if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+  
+      if (currentTheme === 'dark') {
+          toggleSwitches.forEach(function(sw) { sw.checked = true; });
+      }
+  } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleSwitches.forEach(function(sw) { sw.checked = true; });
+  }
+  function switchTheme(e) {
+    toggleSwitches.forEach(function(sw) { sw.checked = e.target.checked; });
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    } 
+  }
+  toggleSwitches.forEach(function(sw) { sw.addEventListener('change', switchTheme, false); });
+
+</script> <!-- thanks: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8 -->
+
+
+
+
+<!-- <script>
+  $('#content-section').css('padding-top', $('.navbar').outerHeight() + 'px')
+  
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+    document.getElementById("toc").style.paddingTop = "81px";
+  } else {
+    document.getElementById("navbar").style.top = "-66px";
+    document.getElementById("toc").style.paddingTop = "15px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script> -->
+</body>

@@ -51,134 +51,102 @@
   </nav>
 <div class="container-fluid px-0 b-0 content" id="content-section">
   
-<section class="text-center align-center fullsize" id="about" style="background: url(/static/main.jpg) no-repeat center; background-size: cover;"> <!--  -->
-  <div class="container-fluid container-lg pb-5">
-        <p class="">
-          <h1 class="display-3 font-weight-bold text-right text-white" >Andrew Ritter</h1>
-          <!-- <br> -->
-          <p class="display-4 lead text-right text-white">
-               Web Resume
-          </p> 
-        </p>
-  </div>
-</section>
+<section>
+  <div class="container-fluid justify-content-center"  style="background-color: #86b6fd;" >
+    
+    
+    <div class="container mx-auto text-center">
+      <!-- <object type="image/svg+xml" data="/static/website.svg" class="mw-100"></object> -->
+        <img src="/static/website.svg" class="img-fluid mx-auto d-block" style="max-height: 35vh;">
 
-<section class="text-center halfsize content">
-  <div class="container-fluid container-lg" id="projects">
-    <h1 class="display-4 background2 font-weight-bold title-text">Projects</h1>
-    <hr>
-    <div class="row flex-row flex-nowrap sidescroll" id="sidescroll">
-      
-      <div class="col-12 col-sm-6 col-md-4">
-        <a href="/projects/inventoryassistant/">
-          <div class="card h-100">
-            <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/IA%20conveyor.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #a8978e;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Inventory Assistant</h5>
-              <h6 class="card-subtitle text-muted mb-2">Made with Python</h6>
-              <hr>
-              <p class="card-text text-left">A service made to extract specific bits of text from certain PDF files, reconcile it with existing data, then move it to the desired locations.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-12 col-sm-6 col-md-4">
-        <a href="/projects/website/">
-          <div class="card h-100">
-            <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/website.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #86b6fd;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">This website!</h5>
-              <h6 class="card-subtitle text-muted mb-2">Python, Flask, and Bootstrap</h6>
-              <hr>
-              <p class="card-text text-left">I had never done front-end work before, so what better way than to make a website of my own?</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-12 col-sm-6 col-md-4">
-        <a href="/projects/homelab/">
-          <div class="card h-100">
-            <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/servers%20thumb.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #A5B1A5;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Homelab</h5>
-              <h6 class="card-subtitle text-muted mb-2">Hardware/Networking</h6>
-              <hr>
-              <p class="card-text text-left">An environment for learning about networking, virtualization, servers, and other technology used in IT.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      
     </div>
-    <div class="container d-md-none"> <!-- remove d-md-none once there are more than 3 project posts -->
-      <br>
-      <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('left','#sidescroll')">&lt;</button>
-      <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('right','#sidescroll')">&gt;</button>
+    
+  </div>
+  <div class="container-fluid container-md content">
+    <!-- <p class="title text-center display-3"><strong>This website!</strong></p> -->
+    <!-- <br> -->
+    <div class="row">
+      <div class="col-12 col-lg-3 d-none d-flex mkdn-nav">
+        <div class="container-fluid p-0">
+          <div class="sticky-top" id="toc">
+            <div class="container-fluid pt-3"></div>
+            <div class="container-fluid content py-3 border border-white rounded">
+
+              <h4 class="text-center"><a href="#">Table of Contents</a></h4>
+              <hr>
+              <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#tools">Tools</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#bootstrap">Bootstrap</a></li>
+<li><a href="#scss">SCSS</a></li>
+<li><a href="#inkscape">Inkscape</a></li>
+<li><a href="#github">Github!</a></li>
+</ul>
+</li>
+<li><a href="#thoughts">Thoughts</a></li>
+</ul>
+</div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9 px-0">
+        <div class="container-fluid mkdn pt-3" style="padding-bottom: 10rem;">
+          <h1 id="introduction">Introduction</h1>
+<hr />
+<p>Most of what I've done until now was back-end work. Servers, networks, applications. What I didn't have were front-end experience and projects to talk about. This website is my first real attempt at front-end work, so go easy on me! </p>
+<p>The website design, content, and graphics/pictures were all made by me with help from Bootstrap and <a href="favicon.io">favicon.io</a>.</p>
+<p>I intend to keep this around and add content and improve the site over time. Any tips or suggestions are welcome!</p>
+<p><br></p>
+<h1 id="tools">Tools</h1>
+<hr />
+<h3 id="python">Python</h3>
+<p>When I started the project, I was familiar with Python and a little bit of Flask. It may not be the <em>best</em> tool for the job, but it managed to get me started quickly enough.</p>
+<p>Each of the modules below helped make the design and build process smooth. </p>
+<p>Markdown:</p>
+<ul>
+<li>is fast and easy to write </li>
+<li>uses simple syntax which is server-side rendered into HTML</li>
+</ul>
+<p>Frozen_Flask:</p>
+<ul>
+<li>generates a static site from a dynamic source</li>
+<li>places it in a git repository so all I need to do is commit the changes and push them to make the website live</li>
+</ul>
+<p>Livereload:</p>
+<ul>
+<li>automatically refreshes the webpage when a website file is changed</li>
+</ul>
+<h3 id="bootstrap">Bootstrap</h3>
+<p>CSS and HTML aren't particularly hard, but there's a ton of trial and error when first starting out. Bootstrap really helped out here in terms of making it easier to get things right, reducing the amount of manual CSS work, and laying things out in a way that makes it relatively easy to understand what exactly is going on under the hood.</p>
+<h3 id="scss">SCSS</h3>
+<p>Bootstrap has a pre-built css file available. But you won't use everything in it so it's larger than necessary. And you'll likely add your own CSS and want to change up the theme.</p>
+<p>This is where the Bootstrap source files come in. </p>
+<p>SCSS files are compiled into CSS. They look very similar, but SCSS comes with some extra features that improve readability and reduce repetition. It has variables so you only need to change a value in one place (such as a color) and it will compile with that value everywhere where the variable was placed in the SCSS. It also allows for nested rules, further reducing the need for repetition.</p>
+<p>Bootstrap is compiled using these SCSS files and you can choose which ones you want to include in the end product if you compile it yourself. I created my custom .scss file and imported the necessary files from Bootstrap, as well as added my custom CSS.</p>
+<p>The Python script will convert SCSS to CSS and minimize it as part of the site generation process.</p>
+<h3 id="inkscape">Inkscape</h3>
+<p>I don't consider myself an artist in any way, shape, or form, but I'm pretty happy with how the above image (and some other images on this site) turned out. </p>
+<p>Inkscape was used to create those images. I originally exported them to .png files while saving the vector graphics locally. After playing around a bit with the vector format and optimizing them, the file size was greatly reduced below the size of an equivalent .png file. On low-end devices, it's not quite as smooth when rendering the .svg images but I think the sharpness of the image on all screen sizes makes up for the difference.</p>
+<h3 id="github">Github!</h3>
+<p>The website is currently published to GitHub Pages as a static site. </p>
+<p>Publishing it there takes care of the SSL Certificate automatically. It also makes publishing as easy as a git-push. And best of all...</p>
+<p>It's free!</p>
+<p>The only downside is you can only host a static site there. Adding in a backend for a CMS or other functions will mean I'll have to find another host for the site.</p>
+<p><br></p>
+<h1 id="thoughts">Thoughts</h1>
+<hr />
+<p>The more I researched and progressed on the project, the more I found that Python isn't a typical tool for this sort of project. If I had taken a different route, I may have had an easier time with different aspects of this website.</p>
+<p>Creating this website helped me learn quite a bit about front-end design. I knew nothing before I started this project. Choices were made to get the project going fast and have something that looked good at the end. Other choices intentionally led to more work than necessary for the simple fact that it would lead to me digging deeper into CSS and HTML. In the end, I'm pretty happy with how it turned out. And I hope it looks good to you too.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="experience">
-    <p>
-      <h1 class="display-4 font-weight-bold text-center">Experience</h1>
-      <hr>
-      <div class="container">
-        <h5>Bruckner Truck Sales</h5>
-<h6>System Administrator</h6>
-<p>2020 - Present</p>
-<ul>
-<li>Assisted with day-to-day helpdesk duties</li>
-<li>Built a Python application for assisting with inventory management (check it out above!)</li>
-<li>Implemented a company-wide multi-factor authentication project</li>
-<li>Adjusted Microsoft license usage to reduce costs</li>
-</ul>
-<p><br></p>
-<h5>cat-man-du</h5>
-<h6>Computer Technician</h6>
-<p>2013 - 2015</p>
-<ul>
-<li>Worked with the customer to determine their computer issues</li>
-<li>Replaced faulty components after troubleshooting hardware problems</li>
-<li>Removed viruses/malware from infected computers</li>
-<li>Performed data recovery on failing hard drives when possible</li>
-</ul>
-<p><br></p>
-<!-- #### For other roles, check out my Linkedin!
-
-<a href="https://www.linkedin.com/in/aeritter">https://www.linkedin.com/in/aeritter</a> -->
-    </p>
-  </div>
-</section>
-
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="education">
-    <p>
-      <h1 class="display-4 font-weight-bold text-center">Education</h1>
-      <hr>
-      <div class="container">
-        <h5>BS - Technology Management</h5>
-<h6>Texas A&amp;M University</h6>
-<p>Class of 2020<br />
-Minors in Business and Cybersecurity<br />
-<br></p>
-<h5>A+ Certified</h5>
-<p>2015<br />
-<br></p>
-      </div>
-    </p>
-  </div>
-</section>
-
-
 
 
   
@@ -247,18 +215,6 @@ Minors in Business and Cybersecurity<br />
 
 
 
-
-<script>
-  function scrollToSide(side, elmnt) {
-    var el = $(elmnt);
-    var scrollAmount = $(elmnt+" div")[0].clientWidth;
-    el.css('scroll-snap-type', 'none'); 
-    el.animate({scrollLeft: side==='left' ? '-='+scrollAmount : '+='+scrollAmount}, 300);
-    el.promise().done(function(){
-      el.css('scroll-snap-type', 'x mandatory'); 
-    });
-  };
-</script>
 
 <!-- <script>
   $('#content-section').css('padding-top', $('.navbar').outerHeight() + 'px')
