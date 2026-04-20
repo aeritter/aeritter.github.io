@@ -10,7 +10,7 @@
   <link rel="manifest" href="/static/favicons/site.webmanifest">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
   
-      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?008f230e">
+      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?a21393ba">
   
   
   <script> //added to prevent flickering
@@ -22,19 +22,19 @@
 </head>
 <body>
   <nav class="navbar-expand-md navbar-custom align-center" id="navbar">
-    <div class="navbar container-lg navbar-custom py-0 px-3">
+    <div class="navbar container navbar-custom py-0 px-3">
       <a class="navbar-brand" href="https://aeritter.com">
         <h1 class="text-center">Andrew Ritter</h1>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav font-weight-bold ml-auto">
-          <li class="nav-item"><a class="nav-link pl-3" href="/#">Home</a></li>
-          <li class="nav-item"><a class="nav-link pl-3" href="/#projects">Projects</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#experience">Experience</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#education">Education</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/contact/">Contact</a></li> 
-          <li class="nav-item d-block d-md-none pl-3">
+        <ul class="navbar-nav fw-bold ms-auto">
+          <li class="nav-item"><a class="nav-link ps-3" href="/#">Home</a></li>
+          <li class="nav-item"><a class="nav-link ps-3" href="/#projects">Projects</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#experience">Experience</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#education">Education</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/contact/">Contact</a></li> 
+          <li class="nav-item d-block d-md-none ps-3">
             <hr>
             <div class="custom-control custom-switch theme-switch pb-3">
               <input type="checkbox" class="custom-control-input" id="theme-switch-toggle">
@@ -51,12 +51,12 @@
   </nav>
 <div class="container-fluid px-0 b-0 content" id="content-section">
   
-<section class="text-center align-center fullsize" id="about" style="background: url(/static/main.jpg) no-repeat center; background-size: cover;"> <!--  -->
+<section class="text-end align-center fullsize" id="about" style="background: url(/static/main.jpg) no-repeat center; background-size: cover;"> <!--  -->
   <div class="container-fluid container-lg pb-5">
         <p class="">
-          <h1 class="display-3 font-weight-bold text-right text-white" >Andrew Ritter</h1>
+          <h1 class="display-3 fw-bold text-end text-white" >Andrew Ritter</h1>
           <!-- <br> -->
-          <p class="display-4 lead text-right text-white">
+          <p class="display-4 lead text-end text-white">
                Web Resume
           </p> 
         </p>
@@ -65,21 +65,43 @@
 
 <section class="text-center halfsize content">
   <div class="container-fluid container-lg" id="projects">
-    <h1 class="display-4 background2 font-weight-bold title-text">Projects</h1>
+    <h1 class="display-4 background2 fw-bold title-text">Projects</h1>
     <hr>
     <div class="row flex-row flex-nowrap sidescroll" id="sidescroll">
+      
+      <div class="col-12 col-sm-6 col-md-4">
+        <a href="/projects/pkfinder/">
+          <div class="card h-100">
+            <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
+              <object data="/static/pkfinder.svg" type="image/svg+xml" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #a8978e;"></object>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">pkfinder</h5>
+              <h6 class="card-subtitle text-muted mb-2">How quickly can it go?</h6>
+              <hr>
+              <p class="card-text text-start">Finding Primary Keys in an unmarked dataset isn&#39;t easy. Using Rust, I wanted to see how quickly I could determine a Primary Key or Composite Key from a given dataset.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text text-end text-muted">Aug 17, 2025</p>
+            </div>
+          </div>
+        </a>
+      </div>
       
       <div class="col-12 col-sm-6 col-md-4">
         <a href="/projects/inventoryassistant/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/IA%20conveyor.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #a8978e;">
+              <object data="/static/IA%20conveyor.svg" type="image/svg+xml" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #a8978e;"></object>
             </div>
             <div class="card-body">
               <h5 class="card-title">Inventory Assistant</h5>
               <h6 class="card-subtitle text-muted mb-2">Made with Python</h6>
               <hr>
-              <p class="card-text text-left">A service made to extract specific bits of text from certain PDF files, reconcile it with existing data, then move it to the desired locations.</p>
+              <p class="card-text text-start">A service made to extract specific bits of text from certain PDF files, reconcile it with existing data, then move it to the desired locations.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text text-end text-muted">Aug 3, 2020</p>
             </div>
           </div>
         </a>
@@ -89,13 +111,16 @@
         <a href="/projects/website/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/website.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #86b6fd;">
+              <object data="/static/website.svg" type="image/svg+xml" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #86b6fd;"></object>
             </div>
             <div class="card-body">
               <h5 class="card-title">This website!</h5>
               <h6 class="card-subtitle text-muted mb-2">Python, Flask, and Bootstrap</h6>
               <hr>
-              <p class="card-text text-left">I had never done front-end work before, so what better way than to make a website of my own?</p>
+              <p class="card-text text-start">I had never done front-end work before, so what better way than to make a website of my own?</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text text-end text-muted">Aug 3, 2020</p>
             </div>
           </div>
         </a>
@@ -105,20 +130,23 @@
         <a href="/projects/homelab/">
           <div class="card h-100">
             <div class="card-img-top " style="padding-bottom: 56.25%; position: relative;">
-              <img src="/static/servers%20thumb.svg" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #A5B1A5;">
+              <object data="/static/servers%20thumb.svg" type="image/svg+xml" class="img-thumbnail position-absolute" style="object-fit: cover; top: 0; left: 0; height: 100%; width: 100%; background-color: #A5B1A5;"></object>
             </div>
             <div class="card-body">
               <h5 class="card-title">Homelab</h5>
               <h6 class="card-subtitle text-muted mb-2">Hardware/Networking</h6>
               <hr>
-              <p class="card-text text-left">An environment for learning about networking, virtualization, servers, and other technology used in IT.</p>
+              <p class="card-text text-start">An environment for learning about networking, virtualization, servers, and other technology used in IT.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text text-end text-muted">Aug 3, 2020</p>
             </div>
           </div>
         </a>
       </div>
       
     </div>
-    <div class="container d-md-none"> <!-- remove d-md-none once there are more than 3 project posts -->
+    <div class="container"> <!-- remove d-md-none once there are more than 3 project posts -->
       <br>
       <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('left','#sidescroll')">&lt;</button>
       <button type="button" class="btn-lg btn-primary text-white" onclick="scrollToSide('right','#sidescroll')">&gt;</button>
@@ -126,15 +154,69 @@
   </div>
 </section>
 
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="experience">
+<section class="text-start halfsize content">
+  <div class="container" id="experience">
     <p>
-      <h1 class="display-4 font-weight-bold text-center">Experience</h1>
+      <h1 class="display-4 fw-bold text-center">Experience</h1>
       <hr>
       <div class="container">
-        <h5>Bruckner Truck Sales</h5>
-<h6>System Administrator</h6>
-<p>2020 - Present</p>
+        <h3 id="advantage-solutions"><strong>Advantage Solutions</strong></h3>
+<h5 id="staff-engineer"><strong>Staff Engineer</strong></h5>
+<p><em>2025 - Present</em></p>
+<ul>
+<li>Designed and built the foundational pieces and initial working version of the Ingestion Framework, a modular tool using Python and Pydantic to declaratively define, validate, and run ingestion processes. Included tools such as:<ul>
+<li>Unzipping and moving files</li>
+<li>Setting up tables (including transformations) by reading in files or another table</li>
+<li>Defining declarative pipeline tables (DLT Streaming Tables, Materialized Views, Auto CDC flows, appending flows)</li>
+<li>Creating notifications when done</li>
+<li>A CDC preprocess to either incrementally load data from an external table or do a full compare and generate SCD-2 data</li>
+<li>Multiple Director-level functions (following the <a href="https://refactoring.guru/design-patterns/builder">Builder pattern</a>) for generating configuration files according to the user's input</li>
+</ul>
+</li>
+<li>Created new user stories for feature requests for the framework</li>
+<li>Managed progress on said user stories, divvying up work to the team and reviewing/approving PRs as work completed</li>
+<li>Assisted team members with any Databricks, Python, Spark, or SQL issues encountered</li>
+<li>Assisted team with mass ingestion of tables from foreign catalogs (Bronze)</li>
+<li>Assisted team with creation and rollout of transformation tables (Silver/Gold) for new projects</li>
+</ul>
+<h5 id="software-engineer-ii"><strong>Software Engineer II</strong></h5>
+<p><em>2024 - 2025</em></p>
+<ul>
+<li>Helped transition during the split where ATLAS was sold off to Crisp</li>
+<li>Contributed to many meetings surrounding direction and feasibility of certain paths</li>
+<li>Played a large role in translating a reporting system from the previous environment (a C# ETL/reporting application and stored procedures) to Databricks</li>
+<li>Proved out feasibility of translating aspects of the old system to the new:<ul>
+<li>Incorporating user input for reporting</li>
+<li>Building temp tables from input that match the results of the old stored procedures 1:1</li>
+<li>Generating finished reports as Excel files</li>
+<li>Tooling with a UI for a user to submit updates to a table by uploading a file and having the tool validate it</li>
+</ul>
+</li>
+<li>Dug into performance-related functionality, reducing end-to-end pipeline runtime for the above reporting system from 25 minutes to 8 minutes.</li>
+<li>Attempted along with another team member to manage the buildout of an ingestion framework by a contracting company's team</li>
+</ul>
+<p><br></p>
+<h3 id="atlas-advantage-solutions-subsidiary"><strong>ATLAS</strong> (Advantage Solutions subsidiary)</h3>
+<h5 id="software-engineer-ii_1"><strong>Software Engineer II</strong></h5>
+<p><em>2022 - 2024</em></p>
+<ul>
+<li>Became one of the primary maintainers of the Python-based data retrieval tool</li>
+<li>Helped develop automation for pulling data from two additional retailers</li>
+<li>Repaired automation when it broke due to changes on the retailer's side</li>
+<li>Began preparatory work toward an overhaul of the automated report retrieval tool</li>
+</ul>
+<h5 id="software-engineer-i"><strong>Software Engineer I</strong></h5>
+<p><em>2021 - 2022</em></p>
+<ul>
+<li>Assisted in maintenance of ETL application automating data retrieval from Target for various vendors</li>
+<li>Created an application/API using Python to assist with determining primary keys and data prioritization for ingestion of new datasets</li>
+<li>Contributed additional functionality to an internal command-line-based tool to speed up workflows</li>
+<li>Added an internal tool to our suite of tools in <a href="https://www.retool.com">Retool</a></li>
+</ul>
+<p><br></p>
+<h3 id="bruckner-truck-sales"><strong>Bruckner Truck Sales</strong></h3>
+<h5 id="system-administrator"><strong>System Administrator</strong></h5>
+<p><em>2020 - 2021</em></p>
 <ul>
 <li>Assisted with day-to-day helpdesk duties</li>
 <li>Built a Python application for assisting with inventory management (check it out above!)</li>
@@ -142,9 +224,9 @@
 <li>Adjusted Microsoft license usage to reduce costs</li>
 </ul>
 <p><br></p>
-<h5>cat-man-du</h5>
-<h6>Computer Technician</h6>
-<p>2013 - 2015</p>
+<h3 id="cat-man-du"><strong>cat-man-du</strong></h3>
+<h5 id="computer-technician"><strong>Computer Technician</strong></h5>
+<p><em>2013 - 2015</em></p>
 <ul>
 <li>Worked with the customer to determine their computer issues</li>
 <li>Replaced faulty components after troubleshooting hardware problems</li>
@@ -152,26 +234,20 @@
 <li>Performed data recovery on failing hard drives when possible</li>
 </ul>
 <p><br></p>
-<!-- #### For other roles, check out my Linkedin!
-
-<a href="https://www.linkedin.com/in/aeritter">https://www.linkedin.com/in/aeritter</a> -->
     </p>
   </div>
 </section>
 
-<section class="text-left halfsize content">
-  <div class="container-fluid container-lg" id="education">
+<section class="text-start halfsize content">
+  <div class="container" id="education">
     <p>
-      <h1 class="display-4 font-weight-bold text-center">Education</h1>
+      <h1 class="display-4 fw-bold text-center">Education</h1>
       <hr>
       <div class="container">
-        <h5>BS - Technology Management</h5>
-<h6>Texas A&amp;M University</h6>
+        <h4 id="bs-technology-management"><b>BS - Technology Management</b></h4>
+<h5 id="texas-am-university"><u>Texas A&amp;M University</u></h5>
 <p>Class of 2020<br />
 Minors in Business and Cybersecurity<br />
-<br></p>
-<h5>A+ Certified</h5>
-<p>2015<br />
 <br></p>
       </div>
     </p>
@@ -185,17 +261,17 @@ Minors in Business and Cybersecurity<br />
   <footer class="footer">
     <div class="container-fluid m-0 p-5">
       <div class="container align-middle">
-        <div class="float-left text-light">
-          © 2020 Andrew Ritter<br>
+        <div class="float-start text-light">
+          © <script>document.write(new Date().getFullYear())</script> Andrew Ritter<br>
           Made with Python, Flask, and Bootstrap.
         </div>
-        <div class="float-right d-none d-md-block">
+        <div class="float-end d-md-block">
           <div class="custom-control custom-switch theme-switch pb-3">
             <input type="checkbox" class="custom-control-input" id="theme-switch-toggle2">
             <label class="custom-control-label" for="theme-switch-toggle2"><p class="text-white m-0 p-0">Dark Theme</p></label>
           </div>
         </div>
-        <!-- <div class="float-right">
+        <!-- <div class="float-end">
           <ul class="list-unstyled ">
             <li><a href="https://www.github.com/aeritter/"><u>GitHub</u></a></li>
             <li><a href="https://www.linkedin.com/in/aeritter/"><u>Linkedin</u></a></li>

@@ -10,7 +10,7 @@
   <link rel="manifest" href="/static/favicons/site.webmanifest">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
   
-      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?008f230e">
+      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?a21393ba">
   
   
   <script> //added to prevent flickering
@@ -22,19 +22,19 @@
 </head>
 <body>
   <nav class="navbar-expand-md navbar-custom align-center" id="navbar">
-    <div class="navbar container-lg navbar-custom py-0 px-3">
+    <div class="navbar container navbar-custom py-0 px-3">
       <a class="navbar-brand" href="https://aeritter.com">
         <h1 class="text-center">Andrew Ritter</h1>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav font-weight-bold ml-auto">
-          <li class="nav-item"><a class="nav-link pl-3" href="/#">Home</a></li>
-          <li class="nav-item"><a class="nav-link pl-3" href="/#projects">Projects</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#experience">Experience</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#education">Education</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/contact/">Contact</a></li> 
-          <li class="nav-item d-block d-md-none pl-3">
+        <ul class="navbar-nav fw-bold ms-auto">
+          <li class="nav-item"><a class="nav-link ps-3" href="/#">Home</a></li>
+          <li class="nav-item"><a class="nav-link ps-3" href="/#projects">Projects</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#experience">Experience</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#education">Education</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/contact/">Contact</a></li> 
+          <li class="nav-item d-block d-md-none ps-3">
             <hr>
             <div class="custom-control custom-switch theme-switch pb-3">
               <input type="checkbox" class="custom-control-input" id="theme-switch-toggle">
@@ -57,7 +57,7 @@
     
     <div class="container mx-auto text-center">
       <!-- <object type="image/svg+xml" data="/static/website.svg" class="mw-100"></object> -->
-        <img src="/static/website.svg" class="img-fluid mx-auto d-block" style="max-height: 35vh;">
+        <object data="/static/website.svg" type="image/svg+xml" class="img-fluid mx-auto d-block" style="max-height: 35vh;"></object>
 
     </div>
     
@@ -66,7 +66,7 @@
     <!-- <p class="title text-center display-3"><strong>This website!</strong></p> -->
     <!-- <br> -->
     <div class="row">
-      <div class="col-12 col-lg-3 d-none d-flex mkdn-nav">
+      <div class="col-12 col-lg-3 d-flex mkdn-nav">
         <div class="container-fluid p-0">
           <div class="sticky-top" id="toc">
             <div class="container-fluid pt-3"></div>
@@ -95,7 +95,10 @@
         </div>
       </div>
       <div class="col-12 col-lg-9 px-0">
-        <div class="container-fluid mkdn pt-3" style="padding-bottom: 10rem;">
+        <div class="container-fluid mkdn pt-3" style="padding-bottom: 1rem;">
+        <div class="text-right" style="padding-top: 1rem;">
+          Aug 3, 2020
+        </div>
           <h1 id="introduction">Introduction</h1>
 <hr />
 <p>Most of what I've done until now was back-end work. Servers, networks, applications. What I didn't have were front-end experience and projects to talk about. This website is my first real attempt at front-end work, so go easy on me! </p>
@@ -153,17 +156,17 @@
   <footer class="footer">
     <div class="container-fluid m-0 p-5">
       <div class="container align-middle">
-        <div class="float-left text-light">
-          © 2020 Andrew Ritter<br>
+        <div class="float-start text-light">
+          © <script>document.write(new Date().getFullYear())</script> Andrew Ritter<br>
           Made with Python, Flask, and Bootstrap.
         </div>
-        <div class="float-right d-none d-md-block">
+        <div class="float-end d-md-block">
           <div class="custom-control custom-switch theme-switch pb-3">
             <input type="checkbox" class="custom-control-input" id="theme-switch-toggle2">
             <label class="custom-control-label" for="theme-switch-toggle2"><p class="text-white m-0 p-0">Dark Theme</p></label>
           </div>
         </div>
-        <!-- <div class="float-right">
+        <!-- <div class="float-end">
           <ul class="list-unstyled ">
             <li><a href="https://www.github.com/aeritter/"><u>GitHub</u></a></li>
             <li><a href="https://www.linkedin.com/in/aeritter/"><u>Linkedin</u></a></li>

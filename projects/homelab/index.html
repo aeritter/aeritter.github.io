@@ -10,7 +10,7 @@
   <link rel="manifest" href="/static/favicons/site.webmanifest">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
   
-      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?008f230e">
+      <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css?a21393ba">
   
   
   <script> //added to prevent flickering
@@ -22,19 +22,19 @@
 </head>
 <body>
   <nav class="navbar-expand-md navbar-custom align-center" id="navbar">
-    <div class="navbar container-lg navbar-custom py-0 px-3">
+    <div class="navbar container navbar-custom py-0 px-3">
       <a class="navbar-brand" href="https://aeritter.com">
         <h1 class="text-center">Andrew Ritter</h1>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav font-weight-bold ml-auto">
-          <li class="nav-item"><a class="nav-link pl-3" href="/#">Home</a></li>
-          <li class="nav-item"><a class="nav-link pl-3" href="/#projects">Projects</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#experience">Experience</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/#education">Education</a></li> 
-          <li class="nav-item"><a class="nav-link pl-3" href="/contact/">Contact</a></li> 
-          <li class="nav-item d-block d-md-none pl-3">
+        <ul class="navbar-nav fw-bold ms-auto">
+          <li class="nav-item"><a class="nav-link ps-3" href="/#">Home</a></li>
+          <li class="nav-item"><a class="nav-link ps-3" href="/#projects">Projects</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#experience">Experience</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/#education">Education</a></li> 
+          <li class="nav-item"><a class="nav-link ps-3" href="/contact/">Contact</a></li> 
+          <li class="nav-item d-block d-md-none ps-3">
             <hr>
             <div class="custom-control custom-switch theme-switch pb-3">
               <input type="checkbox" class="custom-control-input" id="theme-switch-toggle">
@@ -57,7 +57,7 @@
     
     <div class="container mx-auto text-center">
       <!-- <object type="image/svg+xml" data="/static/servers%20thumb.svg" class="mw-100"></object> -->
-        <img src="/static/servers%20thumb.svg" class="img-fluid mx-auto d-block" style="max-height: 35vh;">
+        <object data="/static/servers%20thumb.svg" type="image/svg+xml" class="img-fluid mx-auto d-block" style="max-height: 35vh;"></object>
 
     </div>
     
@@ -66,7 +66,7 @@
     <!-- <p class="title text-center display-3"><strong>Homelab</strong></p> -->
     <!-- <br> -->
     <div class="row">
-      <div class="col-12 col-lg-3 d-none d-flex mkdn-nav">
+      <div class="col-12 col-lg-3 d-flex mkdn-nav">
         <div class="container-fluid p-0">
           <div class="sticky-top" id="toc">
             <div class="container-fluid pt-3"></div>
@@ -86,7 +86,7 @@
 </li>
 <li><a href="#configuration">Configuration</a><ul>
 <li><a href="#pfsense_1">pfSense</a></li>
-<li><a href="#server-1">Server #1</a><ul>
+<li><a href="#server-1_1">Server #1</a><ul>
 <li><a href="#windows-server-2016">Windows Server 2016</a></li>
 <li><a href="#freenas">FreeNAS</a></li>
 <li><a href="#zabbix">Zabbix</a></li>
@@ -94,7 +94,7 @@
 <li><a href="#other">Other</a></li>
 </ul>
 </li>
-<li><a href="#server-2">Server #2</a></li>
+<li><a href="#server-2_1">Server #2</a></li>
 </ul>
 </li>
 <li><a href="#summary">Summary</a></li>
@@ -107,7 +107,10 @@
         </div>
       </div>
       <div class="col-12 col-lg-9 px-0">
-        <div class="container-fluid mkdn pt-3" style="padding-bottom: 10rem;">
+        <div class="container-fluid mkdn pt-3" style="padding-bottom: 1rem;">
+        <div class="text-right" style="padding-top: 1rem;">
+          Aug 3, 2020
+        </div>
           <h1 id="introduction">Introduction</h1>
 <hr />
 <p>I first picked up an interest in computers back in middle school and in the same way that most others probably do -- through video games. There was one in particular that really ignited my interest. It allowed for custom LUA scripts in-game and I happened to meet some people who were writing their own scripts and would freely give out programming tips. It may not have been much or very involved, but it was enough to teach me some of the foundations of logical thinking in programming. Best of all, struggling through a script and seeing actual progress as well as the end result was exhilarating.</p>
@@ -136,7 +139,7 @@
 <h3 id="access-point">Access Point</h3>
 <p>Connected to the switch on one of the VLAN enabled ports. No special set up here. In my experience, the wireless routers made by Asus are very stable and I haven't had an issue with either of 2 different models that I have used.</p>
 <h3 id="servers">Servers</h3>
-<h5>Server 1:</h5>
+<h5 id="server-1">Server 1:</h5>
 <ul>
 <li>Dual Xeon E5-2670</li>
 <li>128GB RAM</li>
@@ -150,8 +153,8 @@
 <p>It's connected in two places to the switch: one ethernet port and one 10Gb SFP+ port. The ethernet is on a separate VLAN which is set up so only a certain IP can access it. It's used for IPMI and for accessing the ESXi menus. The SFP+ card handles external traffic for all of the virtual machines.</p>
 <p>VMs are hosted on the PCIe SSD and backed up to the SATA SSD. VM backups are also copied to the file server just in case.</p>
 <p>The controller for the hard drives is passed through to the file server VM. The hard drives are in a RAIDz2 configuration to get a combination of speed (300MB/s) and reliability. </p>
-<h5>Server 2:</h5>
-<h6>Dell R210ii</h6>
+<h5 id="server-2">Server 2:</h5>
+<h6 id="dell-r210ii">Dell R210ii</h6>
 <ul>
 <li>Xeon E3-1240</li>
 <li>16GB RAM</li>
@@ -178,7 +181,7 @@
 </ul>
 <p>This handled my internet speeds of 400Mbps down and 40Mbps up with ease and QOS made it even better. I could download at nearly the full speed of my connection and not run into latency issues for games or other latency-sensitive applications.</p>
 <p><br></p>
-<h2 id="server-1">Server #1</h2>
+<h2 id="server-1_1">Server #1</h2>
 <p>With ESXi as the hypervisor, everything ran smoothly.</p>
 <p>For a while, consumer Nvidia GPUs could be passed through to a VM and they would work fine. I know that stopped being the case for a while. I'm not sure if anything has changed.</p>
 <h3 id="windows-server-2016">Windows Server 2016</h3>
@@ -197,7 +200,7 @@
 <h3 id="other">Other</h3>
 <p>I spun up a few Windows 10 VMs and Ubuntu/CentOS VMs to test out various things over time.</p>
 <p>Manually setting up each one became a bit of a hassle so I began to look into Ansible and the like. I made a bit of progress before I was stopped by the ESXi free license's limitation of the ESXi API. I got a better license later on but never came back around to get this set up.</p>
-<h2 id="server-2">Server #2</h2>
+<h2 id="server-2_1">Server #2</h2>
 <p>The SSDs in this server were placed in a RAID 1 configuration.</p>
 <p>It ran ESXi as the hypervisor and Windows Server 2016 as the only VM.</p>
 <p>The 2nd copy of Server 2016 was used as a backup domain controller to the Server 2016 VM on the main server.</p>
@@ -218,17 +221,17 @@
   <footer class="footer">
     <div class="container-fluid m-0 p-5">
       <div class="container align-middle">
-        <div class="float-left text-light">
-          © 2020 Andrew Ritter<br>
+        <div class="float-start text-light">
+          © <script>document.write(new Date().getFullYear())</script> Andrew Ritter<br>
           Made with Python, Flask, and Bootstrap.
         </div>
-        <div class="float-right d-none d-md-block">
+        <div class="float-end d-md-block">
           <div class="custom-control custom-switch theme-switch pb-3">
             <input type="checkbox" class="custom-control-input" id="theme-switch-toggle2">
             <label class="custom-control-label" for="theme-switch-toggle2"><p class="text-white m-0 p-0">Dark Theme</p></label>
           </div>
         </div>
-        <!-- <div class="float-right">
+        <!-- <div class="float-end">
           <ul class="list-unstyled ">
             <li><a href="https://www.github.com/aeritter/"><u>GitHub</u></a></li>
             <li><a href="https://www.linkedin.com/in/aeritter/"><u>Linkedin</u></a></li>
